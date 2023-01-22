@@ -73,11 +73,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("z1", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("z1", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));    //Game name and windows's size
 #else
         glview = GLViewImpl::create("z1");
 #endif
-        director->setOpenGLView(glview);
+        director->setOpenGLView(glview);    //Using OpenGL API to create game windows
     }
 
     // turn on display FPS
