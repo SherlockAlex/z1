@@ -75,7 +75,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
         glview = GLViewImpl::createWithRect("z1", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));    //Game name and windows's size
 #else
-        glview = GLViewImpl::create("z1");
+        //glview = GLViewImpl::create("z1");
+	glview = GLViewImpl::createWithRect("Z1",Rect(0,0,480,320),1.0);
 #endif
         director->setOpenGLView(glview);    //Using OpenGL API to create game windows
     }
